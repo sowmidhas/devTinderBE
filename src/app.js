@@ -1,16 +1,22 @@
 const express = require("express");
 
 const app = express();
-
-// app.use("/", (req, res) => {
-//   res.send("Hello from server");
-// });
-app.use("/profile", (req, res) => {
-  res.send("From Profile screen");
+app.use("/user", (req, res) => {
+  res.send("HAHAHAHAHAHAH");
+});
+app.get("/user", (req, res) => {
+  res.send({ firstName: "Sowmiya", lastName: "Ramadhas" });
+});
+app.post("/user", (req, res) => {
+  res.send("Data saved successfully");
 });
 
-app.use("/connections", (req, res) => {
-  res.send("Connections Screen");
+app.put("/user", (req, res) => {
+  res.send("Data updated");
+});
+
+app.delete("/user", (req, res) => {
+  res.send("Data deleted successfully");
 });
 
 app.listen(3000, () => {
